@@ -5,6 +5,10 @@
     --text-color-dark: #ffffff;
 }
 
+html { 
+    scroll-behavior: smooth;
+} 
+
 body{
     margin: 0;
     padding: 0;
@@ -126,4 +130,25 @@ body{
 .fixed-footer-button:hover{
     background-color: #17a2b8;
     color: #ffffff;
+}
+
+footer{
+    padding: 10px 20px 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 64px;
+    border-top: 2px solid #EAEAEA;
+    font-size: 0.9rem;
+    color: #888686;
+}
+
+.dark-theme footer{
+    border-top: 2px solid #2E3241;
+}
+
+.footer-url{
+    text-decoration: none;
+    color: #888686;
+    cursor: pointer;
 }

@@ -92,3 +92,38 @@ body{
     width: 284px;
     height: 48px;
 }
+
+.fixed-footer-container{
+    position: relative;
+}
+
+.fixed-footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #191D28;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+}
+
+.fixed-footer-button{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    color: #17a2b8;
+    background-color: transparent;
+    border: 1px solid #17a2b8;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.fixed-footer-button:hover{
+    background-color: #17a2b8;
+    color: #ffffff;
+}

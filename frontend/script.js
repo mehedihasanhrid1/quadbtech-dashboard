@@ -1,3 +1,18 @@
+//fetched data
+
+async function cryptoData() {
+    try {
+      const result = await fetch("http://localhost:5000/crypto");
+        const data = await result.json();
+        return data;
+    } catch (error) {
+      console.error("Error:", error);
+      return [];
+    }
+  }
+
+
+
 // //dark mode funtionality
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -19,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     const timerCounter = document.getElementById('timer-counter');
 
         function startTimer() {
@@ -39,4 +54,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     startTimer();
+
+    const data = await cryptoData();
+    const button = document.getElementById('dropdown-button');
+  data.forEach(item => {
+    const option = document.createElement("option");
+    option.value = item.base_unit;
+    option.text = item.base_unit;
+    button.appendChild(option);
+  });
+
 });
+
+
+async function showDropdown() {
+    
+  }

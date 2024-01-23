@@ -1,12 +1,13 @@
 const express = require("express");
 const cors = require("cors");
+const axios = require("axios");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
 
 const corsConfig = {
-  origin:['http://localhost:5500'],
+  origin:['http://127.0.0.1:5500'],
 credentials:true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
 };
@@ -31,6 +32,20 @@ async function run() {
     const database = client.db("Hodlinfo");
     const cryptoCollection = database.collection("Crypto");
 
+    // const result = await axios.get("https://api.wazirx.com/api/v2/tickers");
+    // const tickers = Object.values(result.data).slice(0, 10);
+    // await cryptoCollection.insertMany(tickers);
+
+    app.get("/crypto", async (req, res) => {
+      try {
+
+        const result = await cryptoCollection.find({}).toArray();
+        res.json(result);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        res.status(500).send("Internal Server Error");
+      }
+    });
    
   } finally {
     // await client.close();

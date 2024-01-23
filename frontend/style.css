@@ -255,7 +255,7 @@ input:checked + .darkModeSlider:before {
 /* table */
 
 .table-container {
-  margin: 0 40px 16px 40px;
+  margin: 0 40px 10px 40px;
 }
 
 .table-container table {
@@ -407,4 +407,22 @@ footer {
   text-decoration: none;
   color: #888686;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .nav-container {
+    flex-direction: column;
+  }
 }

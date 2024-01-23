@@ -2,7 +2,7 @@
 
 async function cryptoData() {
   try {
-    const result = await fetch("http://localhost:5000/crypto");
+    const result = await fetch("https://quabdtechhodlinfopro-backend.vercel.app/crypto");
     const data = await result.json();
     return data;
   } catch (error) {

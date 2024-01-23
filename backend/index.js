@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const corsConfig = {
-  origin:['http://127.0.0.1:5500'],
+  origin:['http://127.0.0.1:5500' , "https://quabtechhodlinfopro.vercel.app/" , 'https://quabtechhodlinfopro.vercel.app'],
 credentials:true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
 };

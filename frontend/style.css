@@ -255,40 +255,49 @@ input:checked + .darkModeSlider:before {
 /* table */
 
 .table-container {
-  padding-left: 25px;
-  padding-right: 25px;
+  margin: 0 40px;
 }
 
 .table-container table {
   width: 100%;
-  max-width: 100%;
   border-collapse: separate;
   border-spacing: 0 1em;
   margin: 0;
 }
 
-.table-container th h4 {
-  font-family: "Oswald";
+.table-header-th{
   font-size: 16px;
-  opacity: 0.45;
-  letter-spacing: 1px;
+  font-weight: 400;
+  color: #9193AC;
+  padding: 0 12px;
   margin: 0;
-  margin-bottom: -5px;
 }
 
-.table-container th {
-  color: #0c0f48;
-  padding: 0 12px;
+.dark-theme .table-header-th{
+  color: #818389;
+  font-size: 20px;
+}
+
+.table-align-center{
+  text-align: center;
+}
+
+.table-exchange-name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 6px;
+  color: #fff;
 }
 
 .table-container td {
-  color: #0c0f48;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  color: #fff;
 }
 
-.table-container tbody tr {
-  background-color: #f8f9fa;
+.table-container tbody {
+  background-color: #2E3241;
+  margin: 0 20px;
 }
 
 .table-container tbody td:first-child {
@@ -299,16 +308,9 @@ input:checked + .darkModeSlider:before {
   border-radius: 0 10px 10px 0;
 }
 
-
-.table-container td h4 {
-  font-family: "Oswald";
-  font-size: 16px;
-  margin: 0;
-  opacity: 1;
-}
-
-.table-container td a {
-  color: #000;
+.table-logo{
+  height: 20px;
+  width: 20px;
 }
 
 

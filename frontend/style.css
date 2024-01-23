@@ -120,7 +120,33 @@ body {
   font-weight: 600;
 }
 
+.dropdown-select{
+  background-color: #f8f9fa;
+  color: #0c0f48;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.option-dropdown{
+background-color: #fff;
+color: #0C0F48;
+cursor: pointer;
+}
+
+.dropdown-select:focus{
+  border: none;
+  outline: none;
+}
+
 .dark-theme .header-button {
+  background-color: #2e3241;
+  color: #fff;
+}
+
+.dark-theme .dropdown-select{
   background-color: #2e3241;
   color: #fff;
 }

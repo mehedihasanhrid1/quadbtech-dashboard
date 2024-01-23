@@ -436,19 +436,174 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
-  .nav-container {
-    flex-direction: column;
+  .darkModeSwitcher {
+    gap: 14px;
   }
+  .nav-logo {
+   margin-top: 4px;
+  }
+  .best-price-container {
+    margin: 0 28px;
+  
+  }
+
+  
+  .table-container td {
+    font-size: 22px;
+  }
+  
+  .dark-theme .table-container td{
+    font-size: 26px;
+  }
+  
+
 }
 
 @media screen and (max-width: 768px) {
   .nav-container {
     flex-direction: column;
   }
+  .nav-logo {
+    width: 255px;
+    height: 44px;
+  }
+  
+  .header-button-container {
+    gap: 16px;
+    margin: 10px 0 20px 0;
+  }
+  
+.best-price-container {
+  margin: 0 40px;
+
 }
 
-@media screen and (max-width: 415px) {
+.trade-header {
+  font-size: 22px;
+  margin-bottom: 6px;
+ 
+}
+
+.price-main-head {
+  font-size: 48px;
+ 
+}
+
+.price-data-head {
+  font-size: 24px;
+}
+
+.price-data-body {
+  font-size: 20px;
+}
+
+.average-header {
+  font-size: 18px;
+}
+
+
+.table-container {
+  margin: 0 18px 8px 18px;
+  overflow-x: scroll;
+}
+
+.table-header-th{
+  font-size: 14px;
+}
+
+.dark-theme .table-header-th{
+  font-size: 16px;
+}
+
+.table-align-center{
+  padding: 8px 0;
+}
+
+.table-container td {
+  font-size: 16px;
+}
+
+.dark-theme .table-container td{
+  font-size: 18px;
+}
+
+.table-container tbody {
+  margin: 0 18px;
+}
+
+}
+
+@media screen and (max-width: 426px) {
   .nav-container {
     flex-direction: column;
   }
+
+  .nav-logo {
+    width: 255px;
+    height: 44px;
+  }
+  
+  .header-button-container {
+    gap: 16px;
+    margin: 10px 0 20px 0;
+  }
+  
+.best-price-container {
+  margin: 0 20px;
+
+}
+
+.trade-header {
+  font-size: 18px;
+  margin-bottom: 6px;
+ 
+}
+
+.price-main-head {
+  font-size: 24px;
+ 
+}
+
+.price-data-head {
+  font-size: 16px;
+}
+
+.price-data-body {
+  font-size: 14px;
+}
+
+.average-header {
+  font-size: 12px;
+}
+
+
+.table-container {
+  margin: 0 18px 8px 18px;
+  overflow-x: scroll;
+}
+
+.table-header-th{
+  font-size: 12px;
+}
+
+.dark-theme .table-header-th{
+  font-size: 14px;
+}
+
+.table-align-center{
+  padding: 8px 0;
+}
+
+.table-container td {
+  font-size: 12px;
+}
+
+.dark-theme .table-container td{
+  font-size: 14px;
+}
+
+.table-container tbody {
+  margin: 0 16px;
+}
+
 }

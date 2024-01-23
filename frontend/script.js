@@ -18,3 +18,25 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleDarkMode();
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const timerCounter = document.getElementById('timer-counter');
+
+        function startTimer() {
+        let count = 60;
+
+        function updateCounter() {
+            timerCounter.textContent = count;
+            count--;
+
+            if (count < 1) {
+                count = 60;
+            }
+        }
+
+        updateCounter();
+        setInterval(updateCounter, 1000);
+    }
+
+    startTimer();
+});

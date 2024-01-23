@@ -57,22 +57,52 @@ body {
   height: 34px;
 }
 
-.timer-container{
+#timer-container{
+  position: relative;
+  border-radius: 50%;
+  height:32px;
+  width:32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #D6D6D6;
+}
+
+.progress-ring {
+  position: absolute;
+  height: 32px;
+  width: 32px;
   border-radius: 50%;
   border: 4px solid #17a2b8;
-  height:32px;
-    width:32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  animation: rotate 5s linear infinite;
 }
+
+@keyframes rotate {
+  to {
+      transform: rotate(1turn);
+  }
+}
+
 
 #timer-counter{
   font-size: 1.1rem;
   font-weight: 500;
   text-align: center;
   color: #17a2b8;
+  z-index: 1;
 }
+
+.progress-ring {
+  position: absolute;
+  clip: rect(0px, 32px, 32px, 16px);
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 4px solid #17a2b8;
+}
+
+
 
 .switch-toggle input {
   opacity: 0;

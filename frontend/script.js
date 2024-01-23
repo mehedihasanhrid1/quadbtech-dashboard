@@ -2,7 +2,9 @@
 
 async function cryptoData() {
   try {
-    const result = await fetch("https://quabdtechhodlinfopro-backend.vercel.app/crypto");
+    const result = await fetch(
+      "https://quabdtechhodlinfopro-backend.vercel.app/crypto"
+    );
     const data = await result.json();
     return data;
   } catch (error) {
@@ -35,6 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", async function () {
   const crypto = await cryptoData();
   const timerCounter = document.getElementById("timer-counter");
+  const priceNum = document.getElementById("price-main-head");
+  const lastTrade = document.getElementById("last-trade-price");
+  const sellTrade = document.getElementById("sell-trade-price");
+  const buyTrade = document.getElementById("buy-trade-price");
+  const diffTrade = document.getElementById("trade-low-high");
+  const diffPrice = document.getElementById("trade-difference-price");
 
   function startTimer() {
     let count = 60;
@@ -62,4 +70,35 @@ document.addEventListener("DOMContentLoaded", async function () {
     option.className = "option-dropdown";
     button.appendChild(option);
   });
+
+  button.addEventListener("change", function () {
+    const selectedCrypto = button.value;
+    updatePriceNum(selectedCrypto);
+  });
+
+  function updatePriceNum(selectedCrypto) {
+    const selectedCryptoData = crypto.find(
+      (item) => item.base_unit === selectedCrypto
+    );
+
+    if (selectedCryptoData) {
+      priceNum.textContent = `₹ ${selectedCryptoData.high}`;
+      lastTrade.textContent = `₹ ${selectedCryptoData.last}`;
+      buyTrade.textContent = `₹ ${selectedCryptoData.sell}`;
+      sellTrade.textContent = `₹ ${selectedCryptoData.buy}`;
+
+      const lastPrice = parseFloat(selectedCryptoData.last);
+      const highPrice = parseFloat(selectedCryptoData.high);
+
+      const percentageDifference = ((highPrice - lastPrice) / highPrice) * 100;
+      const pricedifference = highPrice - lastPrice;
+      diffTrade.textContent = `${percentageDifference.toFixed(2)}%`;
+      diffPrice.textContent =`▼ ₹ ${pricedifference.toFixed(2)}`
+
+    } else {
+      console.error(`Crypto data for ${selectedCrypto} not found.`);
+    }
+  }
+  const initialCrypto = button.value;
+  updatePriceNum(initialCrypto);
 });

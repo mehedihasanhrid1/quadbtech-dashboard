@@ -24,6 +24,10 @@ body {
   color: var(--text-color-dark);
 }
 
+.margin-zero{
+  margin: 0;
+}
+
 .darkModeSwitcher {
   display: flex;
   align-items: center;
